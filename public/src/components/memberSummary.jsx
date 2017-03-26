@@ -6,7 +6,7 @@ class MemberSummary extends React.Component {
     super(props);
     // this.state = {
     // };
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     // this.pricePerPerson = this.pricePerPerson.bind(this);
     // this.items = this.props.data.items;
     // this.trip = this.data.trip;
@@ -21,9 +21,63 @@ class MemberSummary extends React.Component {
 
   handleSubmit(event) {
     // TODO: the dummyData will be passed down from MemberSummary's parent component
+    // let dummyData = {
+    //   "isAuthenticated": true,
+    //   "tripName": "Japan2016",
+    //   "username": "Gary Wong",
+    //   "tripDesc": "",
+    //   "receiptName": "Receipt01",
+    //   "receiptUrl": "google.com/receipt01.jpg",
+    //   "items": [
+    //     [
+    //       {
+    //         "name": "Pizza",
+    //         "amount": "15",
+    //         "members": [
+    //           "Duy Nguyen"
+    //         ]
+    //       }
+    //     ],
+    //     [
+    //       {
+    //         "name": "Candy",
+    //         "amount": "20",
+    //         "members": [
+    //           "Gary",
+    //           "Whitney"
+    //         ]
+    //       }
+    //     ]
+    //   ],
+    //   "selectItem": 3,
+    //   "selectMember": "Gary Wong",
+    //   "members": [
+    //     [
+    //       "Duy Nguyen"
+    //     ],
+    //     [
+    //       "Gary"
+    //     ],
+    //     [
+    //       "Whitney"
+    //     ],
+    //     [
+    //       "Eugene"
+    //     ]
+    //   ],
+    //   sumBill: 100,
+    //   sumTax: 15,
+    //   sumTip: 20,
+    //   "member": "",
+    //   "memberExist": false,
+    //   "name": "",
+    //   "amount": "",
+    //   "fb_id": "10155155720694140"
+    // }
+
     event.preventDefault();
     // this.setState({dummyData});
-    Util.insertIntoDb(dummyData);
+    Util.insertIntoDb(this.props.data);
   }
 
 
@@ -52,7 +106,7 @@ class MemberSummary extends React.Component {
             )  
           })}
         </ul>
-        <input type="submit" value="Confirm"/>
+        <input type="submit" value="Confirm" onClick={this.handleSubmit}/>
       </div>
     )
   }
