@@ -4,3 +4,11 @@ module.exports = {
   password: process.env.CLEARDB_PASS,
   database: 'heroku_a258462d4ded143'
 };
+
+
+// module.exports = {
+//   host: 'localhost',
+//   user: 'root',
+//   password: '',
+//   database: 'gewd'
+// };
